@@ -1,11 +1,68 @@
 #include <stdio.h>
 
 // Desafio Batalha Naval - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
-// Siga os comentários para implementar cada parte do desafio.
+// Mariane de Oliveira Kronemberger
 
 int main() {
-    // Nível Novato - Posicionamento dos Navios
+
+    // Variáveis
+
+    int tabuleiro[10][10] = {0};
+    int navio1[3] = {3, 3, 3}; //Navio Horizontal
+    int navio2[3] = {3, 3, 3}; //Navio Vertical
+    int navio3[3] = {3, 3, 3}; //Navio Diagonal 1
+    int navio4[3] = {3, 3, 3}; //Navio Diagonal 2
+    int i, j;
+    int l1 = 2, c1 = 4; //Navio Horizontal
+    int l2 = 5, c2 = 1; //Navio vertical
+    int l3 = 6, c3 = 5; //Navio Diagonal 1
+    int l4 = 4, c4 = 7; //Navio Diagonal 2
+
+    // Posicionar navios
+
+    // Navio 1 Horizontal
+    for (i = 0; i < 3; i++){
+        tabuleiro[l1][c1 + i] = navio1[i];
+    };
+
+    //Navio 2 Vertical
+    for (i = 0; i < 3; i ++){
+        tabuleiro[l2 + i][c2] = navio2[i];
+    };
+
+    //Navio 3 Diagonal 1
+    for (i = 0; i < 3; i++){
+        tabuleiro[l3 + i][c3 + i] = navio3[i];
+    };
+
+    //Navio 3 Diagonal 2
+    for (i = 0; i < 3; i++){
+        tabuleiro[l4 + i][c4 + i] = navio4[i];
+    };
+
+    // Tabuleiro e navios
+
+    printf("~*~*~ T A B U L E I R O ~*~*~\n");
+    printf(" 𓊈 0 = Água | 0 = Navio 𓊉 \n \n");
+
+    for (i = 0; i < 10; i++){
+        for (j = 0; j < 10; j ++){
+            if (tabuleiro[i][j] == 0){
+                printf(" 0 ");
+            } else if(tabuleiro[i][j] == 3) {
+                printf (" 3 ");
+            }
+        }
+
+        printf(" \n");
+    }
+
+   
+    return 0;
+}
+
+
+ // Nível Novato - Posicionamento dos Navios
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
@@ -36,5 +93,3 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
 
-    return 0;
-}
